@@ -1,12 +1,8 @@
-# Exp.No:23  
+# Exp.No:5e
 ## Multiple Inheritance
 
----
-
 ### AIM  
-To write a Python program to get the name, attendance, and ID of a student and check if they are eligible for the next module using multiple inheritance. If attendance > 80, the student is eligible; otherwise, not eligible.
-
----
+To write a Python program to get the name, attendance, and ID of a student and check if they are eligible for the next module using multiple inheritance. If attendance > 75, the student is eligible; otherwise, not eligible.
 
 ### ALGORITHM
 
@@ -27,19 +23,53 @@ To write a Python program to get the name, attendance, and ID of a student and c
 9. Call the `check_eligibility` method on the `student` object and print the result.
 10. Terminate the program.
 
----
-
 ### PROGRAM
 
 ```
-
+class Person:  
+    #defining constructor  
+    def __init__(self, personName, personAge):  
+        self.name = personName  
+        self.age = personAge  
+  
+    #defining class methods  
+    def showName(self):  
+        print(self.name)  
+  
+    def showAge(self):  
+        print(self.age)  
+  
+    #end of class definition  
+  
+# defining another class  
+class Student: # Person is the  
+    def __init__(self, studentpercent):  
+        self.studentpercent = studentpercent  
+  
+    def getpercent(self):  
+        return self.studentpercent  
+  
+  
+class Resident(Person, Student): # extends both Person and Student class  
+    def __init__(self, name, age, percent):  
+        Person.__init__(self, name, age)  
+        Student.__init__(self, percent)  
+  
+  
+name=input()
+age=int(input())
+percent=int(input())
+resident1 = Resident(name, age, percent)  
+resident1.showName()  
+resident1.showAge()  
+if resident1.getpercent() > 75:
+    print("Eligible for Exam")
+else:
+    print("Not Eligible for Exam")
 ```
 
 ### OUTPUT
-
+![image](https://github.com/user-attachments/assets/26983f9f-4ba4-4d15-9887-ae07c5a047ed)
 
 ### RESULT
-
-
-
-
+Thus a Python program to get the name, attendance, and ID of a student using multiple inheritance is implemented successfully.
